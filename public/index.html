@@ -7,8 +7,14 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- External Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css">
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -21,13 +27,31 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <h1>Lorem Ipsum</h1>
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="post" action="/tweets/">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue ut tortor a tincidunt. Nunc leo ante, tincidunt at feugiat eu, sagittis ut lorem. Nulla id dolor vel risus lobortis lacinia sed at libero. In cursus dolor quis porttitor lacinia. Vestibulum ut semper purus. Nam posuere massa est, sit amet porttitor ipsum tempus non. Suspendisse nec imperdiet neque. Proin mollis lacinia eros, vitae rhoncus lacus mattis nec.</p>
+    <p>Curabitur vitae posuere sem. Duis et turpis sit amet metus ornare posuere in vel sapien. Cras suscipit mollis porttitor. Maecenas sit amet iaculis felis. In ut velit id nunc accumsan molestie ac sed felis. Curabitur at lacus nunc. Proin non posuere ex. Sed consequat blandit pharetra. In iaculis metus eu sem consequat, eget fringilla purus venenatis.</p>
+      <p>Donec tincidunt at quam et dapibus. Proin ac magna nulla. Phasellus vitae justo vel sem accumsan pulvinar. Curabitur quis elementum mi. Duis sagittis finibus sodales. Maecenas condimentum sit amet quam ut malesuada. Pellentesque ut iaculis diam, quis aliquam tortor. Cras eu elementum leo, quis vehicula mauris. Donec ut gravida nibh. Praesent mollis felis vitae tortor porttitor condimentum. Ut rutrum vestibulum enim quis dictum. Aenean vel nibh scelerisque, accumsan lorem sed, sagittis lorem.</p>
+      <p>Suspendisse imperdiet a odio et feugiat. Donec eget rutrum eros. Suspendisse sodales scelerisque maximus. Duis malesuada tempus enim, scelerisque convallis mauris mollis et. Nullam in erat et nisl posuere luctus. Nulla massa metus, egestas ac feugiat vel, vulputate ut turpis. Donec rutrum, diam non condimentum mollis, velit felis commodo dui, non finibus nibh ligula lacinia lorem. Fusce ac consectetur risus, at viverra mi. Donec a vestibulum diam. Morbi urna dui, porta ut sem vel, tristique mollis justo. Donec quis neque sodales, sodales ex nec, aliquet urna. Phasellus in consequat neque.</p>
+      <p>Integer lacinia, ligula eu fermentum pharetra, velit lacus convallis sem, sit amet faucibus magna lectus eu dui. Mauris nec pretium neque. Donec in lobortis libero, non convallis metus. Nulla ullamcorper auctor nunc a varius. Fusce elementum erat dui, sit amet faucibus nisl tincidunt sed. Nullam luctus ac mi quis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et maximus arcu, nec accumsan nisi. Duis odio metus, egestas eu enim eget, rhoncus ullamcorper libero. Nulla commodo dolor ac libero ultricies, eget viverra nisl imperdiet. Quisque dictum dignissim finibus. Maecenas pellentesque, nisi id porttitor sollicitudin, urna lacus convallis leo, nec accumsan arcu turpis in nisi. Fusce sed felis risus. Duis ligula ante, sagittis a dui at, consequat auctor ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut tortor ex, porta a laoreet vitae, sagittis a orci.</p>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/scripts/composer-char-counter.js" type="text/javascript"></script>
   </body>
 </html>
