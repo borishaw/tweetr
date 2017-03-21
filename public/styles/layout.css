@@ -33,11 +33,6 @@ main {
   margin-right: auto;
 }
 
-.new-tweet h2{
-  border-bottom: solid 1px;
-  margin-top: 0.25em;
-}
-
 .new-tweet {
   margin-left: 2em;
   margin-right: 2em;
@@ -45,6 +40,11 @@ main {
   border-radius: 0.5em;
   background-color: #eee;
   padding: 0.5em;
+}
+
+.new-tweet h2{
+  border-bottom: solid 1px;
+  margin-top: 0.25em;
 }
 
 .new-tweet .counter {
@@ -58,4 +58,60 @@ main {
 
 .new-tweet form .invalid{
   color: red;
+}
+
+#tweets-container .tweet {
+  border: solid 1px;
+  border-radius: 0.5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  opacity: 0.75;
+}
+
+#tweets-container .tweet:hover {
+  opacity: 1;
+}
+
+#tweets-container .tweet:hover .tweet-functions {
+  display: block;
+}
+
+#tweets-container .tweet header {
+  padding: 0.25em;
+  background-color: #eeeeee;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+#tweets-container .tweet header h2{
+  display: inline;
+  vertical-align: top;
+  margin-left: 0.25em;
+}
+
+#tweets-container .tweet header img {
+  height: 90px;
+  border-radius: 0.25em;
+}
+
+#tweets-container .tweet header .user-id {
+  float: right;
+  padding-top: 1.5em;
+}
+
+#tweets-container .tweet .tweet-content {
+  min-height: 5em;
+  border-bottom: solid 1px;
+  padding: 1em;
+}
+
+#tweets-container .tweet footer {
+  padding: 0.5em;
+}
+
+#tweets-container .tweet footer .tweet-functions {
+  color: #66c5b7;
+  float: right;
+  display: none;
 }

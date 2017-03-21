@@ -1,16 +1,16 @@
 $('document').ready(function () {
   "use strict";
 
-  var textArea = $('.new-tweet form textarea');
-  textArea.on('keyup', function (e) {
-    var inputLength = $(this).val().length;
-    var characterLeft = 140 - inputLength;
-    var counter = textArea.parent().find('.counter')[0];
+  let $textArea = $('.new-tweet form textarea');
+  $textArea.on('keyup', function (e) {
+    let inputLength = $(this).val().length;
+    let characterLeft = 140 - inputLength;
+    let $counter = $textArea.parent().find('.counter');
     if (characterLeft < 0) {
-      $(counter).addClass('invalid');
+      $counter.addClass('invalid');
     } else {
-      $(counter).removeClass('invalid');
+      $counter.removeClass('invalid');
     }
-    counter.innerHTML = characterLeft;
+    $counter.text(characterLeft);
   })
 });
