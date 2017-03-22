@@ -60,6 +60,11 @@ main {
   color: red;
 }
 
+.new-tweet form #text-error {
+  margin-left: 1em;
+  color: red;
+}
+
 #tweets-container .tweet {
   border: solid 1px;
   border-radius: 0.5em;
