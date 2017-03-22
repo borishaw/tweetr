@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15378473-1727-4a5f-a3a8-af087be295d0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/app.js.backup" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/app.js" afterPath="$PROJECT_DIR$/public/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/nav.css" afterPath="$PROJECT_DIR$/public/styles/nav.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,22 +36,19 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="119" column="84" lean-forward="false" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+            <state relative-caret-position="342">
+              <caret line="50" column="2" lean-forward="false" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="e#319#1190#0" expanded="false" />
                 <element signature="e#1234#1474#0" expanded="false" />
-                <element signature="e#1310#1358#0" expanded="false" />
-                <element signature="e#1398#1469#0" expanded="false" />
-                <element signature="e#1548#1791#0" expanded="false" />
                 <element signature="e#2052#3202#0" expanded="false" />
-                <marker date="1490213711000" expanded="true" signature="470:1184" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="489:605" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="489:715" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="757:822" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="841:882" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="841:1165" ph="..." />
-                <marker date="1490213711000" expanded="true" signature="941:1145" ph="..." />
+                <element signature="e#3316#3486#0" expanded="false" />
+                <marker date="1490216975000" expanded="false" signature="470:1184" ph="..." />
+                <marker date="1490216975000" expanded="true" signature="489:715" ph="..." />
+                <marker date="1490216975000" expanded="true" signature="757:822" ph="..." />
+                <marker date="1490216975000" expanded="true" signature="841:1165" ph="..." />
+                <marker date="1490216975000" expanded="true" signature="941:1145" ph="..." />
               </folding>
             </state>
           </provider>
@@ -64,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -344,12 +340,12 @@
       <option name="presentableId" value="Default" />
       <updated>1490021369920</updated>
       <workItem from="1490021372742" duration="348000" />
-      <workItem from="1490021831205" duration="33187000" />
+      <workItem from="1490021831205" duration="33817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33535000" />
+    <option name="totallyTimeSpent" value="34165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,24 +511,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/app.js.backup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="50" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="123" selection-end-column="3" />
+          <folding>
+            <marker date="1490216483000" expanded="true" signature="470:1184" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="489:605" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="489:715" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="757:822" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="841:882" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="841:1165" ph="..." />
+            <marker date="1490216483000" expanded="true" signature="941:1145" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="119" column="84" lean-forward="false" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+        <state relative-caret-position="342">
+          <caret line="50" column="2" lean-forward="false" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="e#319#1190#0" expanded="false" />
             <element signature="e#1234#1474#0" expanded="false" />
-            <element signature="e#1310#1358#0" expanded="false" />
-            <element signature="e#1398#1469#0" expanded="false" />
-            <element signature="e#1548#1791#0" expanded="false" />
             <element signature="e#2052#3202#0" expanded="false" />
-            <marker date="1490213711000" expanded="true" signature="470:1184" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="489:605" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="489:715" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="757:822" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="841:882" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="841:1165" ph="..." />
-            <marker date="1490213711000" expanded="true" signature="941:1145" ph="..." />
+            <element signature="e#3316#3486#0" expanded="false" />
+            <marker date="1490216975000" expanded="false" signature="470:1184" ph="..." />
+            <marker date="1490216975000" expanded="true" signature="489:715" ph="..." />
+            <marker date="1490216975000" expanded="true" signature="757:822" ph="..." />
+            <marker date="1490216975000" expanded="true" signature="841:1165" ph="..." />
+            <marker date="1490216975000" expanded="true" signature="941:1145" ph="..." />
           </folding>
         </state>
       </provider>
