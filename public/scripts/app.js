@@ -47,18 +47,20 @@ $(document).ready(function () {
   };
 
   //Fetch Tweets with AJAX when page loads
-  let tweets = {};
-  $.ajax({
-    url: "/tweets",
-    method: "get",
-    success: function (data, textStatus, jqXHR) {
-      tweets = data;
-      renderTweets(tweets);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log(errorThrown);
-    }
-  });
+  function getTweets(){
+    $.ajax({
+      url: "/tweets",
+      method: "get",
+      success: function (data, textStatus, jqXHR) {
+        renderTweets(data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(errorThrown);
+      }
+    });
+  }
+  getTweets();
+
 
   //jQuery elements
   const $submitBtn = $(".new-tweet form input[type='submit']");
@@ -93,17 +95,7 @@ $(document).ready(function () {
         success: function (data, textStatus, jqXHR) {
           $('#tweets-container').html(''); //Clear current tweets
           $form.find('textarea').val(''); //Clear text area when tweet successfully submitted
-          $.ajax({
-            url: "/tweets",
-            method: "get",
-            success: function (data, textStatus, jqXHR) {
-              tweets = data;
-              renderTweets(tweets);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-              console.log(errorThrown);
-            }
-          });
+          getTweets();
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(errorThrown);
