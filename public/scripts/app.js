@@ -63,6 +63,8 @@ $(document).ready(function () {
   //jQuery elements
   const $submitBtn = $(".new-tweet form input[type='submit']");
   const $form = $(".new-tweet form");
+  const $composeBtn = $("nav").find(".compose-btn");
+  const $newTweetSection = $(".new-tweet");
 
   //Form Validation
   $form.validate({
@@ -89,7 +91,8 @@ $(document).ready(function () {
         method: "post",
         data: $(form).serialize(),
         success: function (data, textStatus, jqXHR) {
-          $('#tweets-container').html('');
+          $('#tweets-container').html(''); //Clear current tweets
+          $form.find('textarea').val(''); //Clear text area when tweet successfully submitted
           $.ajax({
             url: "/tweets",
             method: "get",
@@ -109,4 +112,13 @@ $(document).ready(function () {
     }
   });
 
+  //Compose button slide toggle event
+  $newTweetSection.hide(); //Hide first
+  $composeBtn.click(function () {
+    $newTweetSection.slideToggle({
+      complete: function (){
+        $form.find('textarea').focus(); //Focus the text area when slide is complete
+      }
+    });
+  });
 });
