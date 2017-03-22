@@ -36,25 +36,35 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (tweets) {
+    //Sort tweets according to time created
+    tweets.sort(function(a, b){
+      return b.created_at - a.created_at
+    });
+
     tweets.forEach(function (tweet) {
       $('#tweets-container').append(createTweetElement(tweet));
     })
   };
 
+  //Fetch Tweets with AJAX when page loads
+  let tweets = {};
   $.ajax({
     url: "/tweets",
     method: "get",
     success: function (data, textStatus, jqXHR) {
-      renderTweets(data);
+      tweets = data;
+      renderTweets(tweets);
     },
     error: function (jqXHR, textStatus, errorThrown) {
       console.log(errorThrown);
     }
   });
 
+  //jQuery elements
   const $submitBtn = $(".new-tweet form input[type='submit']");
   const $form = $(".new-tweet form");
 
+  //Form Validation
   $form.validate({
     rules: {
       "text": {
@@ -74,13 +84,29 @@ $(document).ready(function () {
     },
 
     submitHandler: function(form){
-      console.log($(form).serialize());
+      $.ajax({
+        url: "/tweets",
+        method: "post",
+        data: $(form).serialize(),
+        success: function (data, textStatus, jqXHR) {
+          $('#tweets-container').html('');
+          $.ajax({
+            url: "/tweets",
+            method: "get",
+            success: function (data, textStatus, jqXHR) {
+              tweets = data;
+              renderTweets(tweets);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(errorThrown);
+            }
+          });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(errorThrown);
+        }
+      });
     }
   });
-
-  /*$submitBtn.click(function (e) {
-    e.preventDefault();
-    console.log($form.serialize());
-  })*/
 
 });
