@@ -25,6 +25,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+
+/*
+ * @Mixin
+ */
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
 main {
   width: 450px;
   background-color: white;
@@ -35,7 +46,7 @@ main {
     margin-left: 2em;
     margin-right: 2em;
     border: solid 1px;
-    border-radius: 0.5em;
+    border-radius: {@include border-radius(0.5em)};
     background-color: #eee;
     padding: 0.5em;
 

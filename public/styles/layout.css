@@ -21,6 +21,9 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/*
+ * @Mixin
+ */
 main {
   width: 450px;
   background-color: white;
@@ -31,7 +34,10 @@ main {
     margin-left: 2em;
     margin-right: 2em;
     border: solid 1px;
-    border-radius: 0.5em;
+    border-radius--webkit-border-radius: 0.5em;
+    border-radius--moz-border-radius: 0.5em;
+    border-radius--ms-border-radius: 0.5em;
+    border-radius-border-radius: 0.5em;
     background-color: #eee;
     padding: 0.5em; }
     main .new-tweet h2 {
