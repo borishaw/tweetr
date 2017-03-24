@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     return `<article class="tweet">
           <header>
-            <img src="${tweetObj.user.avatars.regular}" alt="Bill Fields Logo">
+            <img src="${tweetObj.user.avatars.regular}" alt="Logo of ${tweetObj.user.name}">
             <h2 class="user-name">${tweetObj.user.name}</h2>
             <span class="user-id">${tweetObj.user.handle}</span>
           </header>
@@ -95,6 +95,7 @@ $(document).ready(function () {
         success: function (data, textStatus, jqXHR) {
           $('#tweets-container').html(''); //Clear current tweets
           $form.find('textarea').val(''); //Clear text area when tweet successfully submitted
+          $('.new-tweet form textarea').parent().find('.counter').html('140');
           getTweets();
         },
         error: function (jqXHR, textStatus, errorThrown) {

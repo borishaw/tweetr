@@ -1,0 +1,118 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+main {
+  width: 450px;
+  background-color: white;
+  margin-top: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  .new-tweet {
+    margin-left: 2em;
+    margin-right: 2em;
+    border: solid 1px;
+    border-radius: 0.5em;
+    background-color: #eee;
+    padding: 0.5em;
+
+    h2{
+      border-bottom: solid 1px;
+      margin-top: 0.25em;
+    }
+
+    .counter {
+      float: right;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.5em;
+    }
+
+    form {
+      .invalid {
+        color: red;
+      }
+
+      #text-error {
+        margin-left: 1em;
+        color: red;
+      }
+    }
+  }
+
+  #tweets-container {
+    .tweet {
+      border: solid 1px;
+      border-radius: 0.5em;
+      margin-left: 2em;
+      margin-right: 2em;
+      margin-top: 1em;
+      opacity: 0.75;
+      header {
+        padding: 0.25em;
+        background-color: #eeeeee;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        h2{
+          display: inline;
+          vertical-align: top;
+          margin-left: 0.25em;
+        }
+        img {
+          height: 90px;
+          border-radius: 0.25em;
+        }
+        .user-id {
+          float: right;
+          padding-top: 1.5em;
+        }
+      }
+      .tweet-content {
+        min-height: 5em;
+        border-bottom: solid 1px;
+        padding: 1em;
+      }
+      footer {
+        padding: 0.5em;
+        .tweet-functions {
+          color: #66c5b7;
+          float: right;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//Hover Events
+
+$tweet-hover: "#tweets-container .tweet:hover";
+
+#{$tweet-hover} {  opacity: 1;  }
+
+#{$tweet-hover} .tweet-functions {  display: block;  }

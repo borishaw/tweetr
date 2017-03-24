@@ -1,40 +1,34 @@
 nav {
-    height: 80px;
-    background-color: #00a087;
-    color: #e8fdff;
-    padding: 0 2em 0 2em;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
+  height: 80px;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0 2em 0 2em;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100; }
 
 #nav-bar .logo {
-    width: 80px;
-    height: 80px;
-    float: left;
-}
-
+  width: 80px;
+  height: 80px;
+  float: left; }
 #nav-bar .header {
-    float:left;
-    padding-left: 10px;
-    font-size: 2em;
-    line-height: 80px;
-}
-
-#nav-bar .compose-btn{
-    float: right;
-    background-color: #e7fdff;
-    border-radius: 0.25em;
-    height: auto;
-    font-size: 1.5em;
-    color: #099c85;
-    border: solid 1px black;
-    padding: 0.75em;
-    margin-top: 7px;
-}
-
-#nav-bar .compose-btn:hover{
+  float: left;
+  padding-left: 10px;
+  font-size: 2em;
+  line-height: 80px; }
+#nav-bar .compose-btn {
+  float: right;
+  background-color: #e7fdff;
+  border-radius: 0.25em;
+  height: auto;
+  font-size: 1.5em;
+  color: #099c85;
+  border: solid 1px black;
+  padding: 0.75em;
+  margin-top: 7px; }
+  #nav-bar .compose-btn:hover {
     background-color: white;
-    color: black;
-}
+    color: black; }
+
+/*# sourceMappingURL=nav.css.map */

@@ -5,6 +5,11 @@ const userHelper    = require("../lib/util/user-helper")
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+//Decode & encode html entities
+const Entities = require("html-entities").AllHtmlEntities;
+const entities = new Entities();
+
+
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
@@ -27,7 +32,7 @@ module.exports = function(DataHelpers) {
     const tweet = {
       user: user,
       content: {
-        text: req.body.text
+        text: entities.encode(req.body.text) //Encode html entities before storing in DB to prevent XSS
       },
       created_at: Date.now()
     };
