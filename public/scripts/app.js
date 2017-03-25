@@ -99,7 +99,7 @@ $(document).ready(function () {
           $('#tweets-container').html(''); //Clear current tweets
           $form.find('textarea').val(''); //Clear text area when tweet successfully submitted
           $('.new-tweet form textarea').parent().find('.counter').html('140');
-          getTweets();
+          getTweets(likeTweet);
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log(errorThrown);
@@ -121,18 +121,18 @@ $(document).ready(function () {
   //Like a tweet
   function likeTweet() {
     const $likeBtn = $('.like-tweet');
-    let liked = false;
+    $likeBtn.data("liked", false)
     $likeBtn.click(function () {
       let tweet_id = $(this).closest(".tweet").attr("data-tweetid");
-      if (!liked){
+      if (!$(this).data("liked")){
         $.ajax({
           url: `/tweets/${tweet_id}/like`,
           method: "PUT",
-          success: function (data, textStatus, jqXHR){
-            liked = true;
-            $likeBtn.addClass("liked");
-            console.log($likeBtn.siblings("likes").text());
-            console.log(data, liked, "Liked")
+          success: (data, textStatus, jqXHR) => {
+            $(this).data('liked', true);
+            $(this).addClass("liked");
+            $(this).siblings(".likes").text(parseInt($(this).siblings(".likes").text()) + 1);
+            console.log(data, "Liked")
           },
           error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
@@ -142,17 +142,17 @@ $(document).ready(function () {
         $.ajax({
           url: `/tweets/${tweet_id}/unlike`,
           method: "PUT",
-          success: function(data, textStatus, jqXHR) {
-            liked = false;
-            $likeBtn.removeClass("liked");
-            console.log(data, liked, "Unliked");
+          success: (data, textStatus, jqXHR) => {
+            $(this).data("liked", false);
+            $(this).removeClass("liked");
+            $(this).siblings(".likes").text(parseInt($(this).siblings(".likes").text()) - 1);
+            console.log(data, "Unliked");
           },
           error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
           }
         });
       }
-
     })
   }
 });
