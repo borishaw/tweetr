@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://heroku_zm9d8g56:2lsbdridvb51nhj8b0ja151ege@ds141960.mlab.com:41960/heroku_zm9d8g56";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 MongoClient.connect(MONGODB_URI, (err, db)=>{
   const DataHelpers = require("./lib/data-helpers.js")(db);
