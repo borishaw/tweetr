@@ -85,6 +85,8 @@ main {
         color: #66c5b7;
         float: right;
         display: none; }
+        main #tweets-container .tweet footer .tweet-functions .liked {
+          color: red; }
 
 #tweets-container .tweet:hover {
   opacity: 1; }

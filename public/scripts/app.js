@@ -15,7 +15,7 @@ $(document).ready(function () {
     //use Time Ago plugin to calculate tweet publish time
     let timeAgo = jQuery.timeago(tweetObj.created_at);
 
-    return `<article class="tweet">
+    return `<article class="tweet" data-tweetid="${tweetObj.tweet_id}">
           <header>
             <img src="${tweetObj.user.avatars.regular}" alt="Logo of ${tweetObj.user.name}">
             <h2 class="user-name">${tweetObj.user.name}</h2>
@@ -29,7 +29,8 @@ $(document).ready(function () {
             <span class="tweet-functions">
               <i class="fa fa-flag" aria-hidden="true"></i>
               <i class="fa fa-retweet" aria-hidden="true"></i>
-              <i class="fa fa-heart" aria-hidden="true"></i>
+              <i class="fa fa-heart like-tweet" aria-hidden="true"></i>
+              <span class="likes">${tweetObj.content.likes}</span>
             </span>
           </footer>
         </article>`
@@ -37,7 +38,7 @@ $(document).ready(function () {
 
   const renderTweets = function (tweets) {
     //Sort tweets according to time created
-    tweets.sort(function(a, b){
+    tweets.sort(function (a, b) {
       return b.created_at - a.created_at
     });
 
@@ -47,20 +48,22 @@ $(document).ready(function () {
   };
 
   //Fetch Tweets with AJAX when page loads
-  function getTweets(){
+  function getTweets(cb) {
     $.ajax({
       url: "/tweets",
       method: "get",
       success: function (data, textStatus, jqXHR) {
         renderTweets(data);
+        cb();
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log(errorThrown);
       }
     });
-  }
-  getTweets();
 
+  }
+
+  getTweets(likeTweet);
 
   //jQuery elements
   const $submitBtn = $(".new-tweet form input[type='submit']");
@@ -83,11 +86,11 @@ $(document).ready(function () {
       }
     },
 
-    errorPlacement : function (error, element) {
+    errorPlacement: function (error, element) {
       $(error).insertAfter($submitBtn);
     },
 
-    submitHandler: function(form){
+    submitHandler: function (form) {
       $.ajax({
         url: "/tweets",
         method: "post",
@@ -109,9 +112,47 @@ $(document).ready(function () {
   $newTweetSection.hide(); //Hide first
   $composeBtn.click(function () {
     $newTweetSection.slideToggle({
-      complete: function (){
+      complete: function () {
         $form.find('textarea').focus(); //Focus the text area when slide is complete
       }
     });
   });
+
+  //Like a tweet
+  function likeTweet() {
+    const $likeBtn = $('.like-tweet');
+    let liked = false;
+    $likeBtn.click(function () {
+      let tweet_id = $(this).closest(".tweet").attr("data-tweetid");
+      if (!liked){
+        $.ajax({
+          url: `/tweets/${tweet_id}/like`,
+          method: "PUT",
+          success: function (data, textStatus, jqXHR){
+            liked = true;
+            $likeBtn.addClass("liked");
+            console.log($likeBtn.siblings("likes").text());
+            console.log(data, liked, "Liked")
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+          }
+        });
+      } else {
+        $.ajax({
+          url: `/tweets/${tweet_id}/unlike`,
+          method: "PUT",
+          success: function(data, textStatus, jqXHR) {
+            liked = false;
+            $likeBtn.removeClass("liked");
+            console.log(data, liked, "Unliked");
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+          }
+        });
+      }
+
+    })
+  }
 });

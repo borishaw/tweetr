@@ -114,6 +114,9 @@ main {
           color: #66c5b7;
           float: right;
           display: none;
+          .liked {
+            color: red;
+          }
         }
       }
     }
